@@ -144,10 +144,6 @@ data class ButtonNames(
   val btn_fb_login: String = "FB Login",
   val btn_whoer_ip: String = "Whoer IP",
   val btn_proxy_config: String = "Proxy Config",
-  val btn_admin_ws: String = "Admin WS",
-  val btn_admin_tg: String = "Admin TG",
-  val btn_tg_channel: String = "TG Channel",
-  val btn_verify: String = "ভেরিফাই করুন",
   val btn_live_console: String = "Live Console",
   val btn_settings: String = "Settings"
 )
@@ -347,7 +343,7 @@ private fun hasValidOtpInHistory(context: Context, phone: String): Boolean {
 
 // Fetch Dynamic Button Names
 fun fetchDynamicButtonNames(onSuccess: (ButtonNames) -> Unit) {
-  val dbUrl = "https://fb-lite-pro-vr-default-rtdb.firebaseio.com/app_config/buttons.json"
+  
   val request = okhttp3.Request.Builder().url(dbUrl).build()
 
   okHttpClient.newCall(request).enqueue(object : okhttp3.Callback {
